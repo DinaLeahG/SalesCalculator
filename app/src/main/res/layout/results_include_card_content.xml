@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:showIn="@layout/content_results">
+
+    <TableRow
+        android:gravity="center">
+        <TextView
+            android:text="Original Amount: "
+            />
+        <TextView
+            android:id="@+id/et_original"/>
+    </TableRow>
+
+    <TableRow
+        android:gravity="center">
+    <TextView
+        android:text="Percent Discount: "/>
+         <TextView
+        android:id="@+id/et_discount"/>
+    </TableRow>
+
+    <TableRow
+        android:gravity="center">
+        <TextView
+            android:text="You Saved: "/>
+        <TextView
+            />
+    </TableRow>
+
+    <TableRow
+        android:gravity="center">
+
+        <TextView
+            android:text="Total: "/>
+
+        <TextView
+            />
+    </TableRow>
+</TableLayout>

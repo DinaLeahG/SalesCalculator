@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="buttonBar_margin">1dp</dimen>
+    <dimen name="divider_padding">1dp</dimen>
+    <dimen name="button_text_size">14sp</dimen>
+    <dimen name="toolButton_minWidth">60dp</dimen>
+    <dimen name="button_minHeight">36dp</dimen>
+    <dimen name="button_minWidth">60dp</dimen>
+    <dimen name="ll_margin">2dp</dimen>
+    <dimen name="banner_text_size">18sp</dimen>
+    <dimen name="appBar_elevation">4dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+</resources>

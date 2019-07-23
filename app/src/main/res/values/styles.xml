@@ -1,0 +1,56 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="FAB">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+    </style>
+
+
+    <style name="borderlessButtonStyle.ToolButtonStyle">
+        <item name="android:minWidth">@dimen/toolButton_minWidth</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
+
+    <!-- These styles are used to eliminate redundancies in XML and code -->
+    <style name="borderlessButtonStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium.Inverse</item>
+        <item name="android:minHeight">@dimen/button_minHeight</item>
+        <item name="android:minWidth">@dimen/button_minWidth</item>
+    </style>
+
+    <style name="CardViewSemiTransparent" parent="CardView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:alpha">.7</item>
+        <item name="cardBackgroundColor">@color/colorDefaultBackground</item>
+        <item name="cardCornerRadius">@dimen/ll_margin</item>
+        <item name="cardElevation">@dimen/card_view_default_elevation</item>
+        <item name="cardUseCompatPadding">false</item>
+    </style>
+
+
+
+</resources>
