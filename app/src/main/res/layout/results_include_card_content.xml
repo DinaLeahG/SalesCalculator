@@ -7,11 +7,14 @@
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:padding="10dp"
+    android:elevation="8dp"
     tools:showIn="@layout/content_results">
 
     <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center">
-
         <TextView
             android:id="@+id/tv_orig"
             style="@style/text_size"
@@ -22,14 +25,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
-
         <TextView
-            android:id="@+id/percent"
+            android:id="@+id/tv_discount"
             style="@style/text_size" />
     </TableRow>
 
     <TableRow
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <TextView
             android:id="@+id/tv_saved"
             style="@style/text_size"
@@ -37,8 +41,9 @@
     </TableRow>
 
     <TableRow
-        android:gravity="center">
-
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <TextView
            android:id="@+id/tv_total"
             style="@style/text_size"/>

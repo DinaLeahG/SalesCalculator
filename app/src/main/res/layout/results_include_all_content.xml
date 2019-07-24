@@ -12,9 +12,7 @@
 
     <androidx.cardview.widget.CardView
         style="@style/CardViewSemiTransparent">
-
         <include layout="@layout/results_include_card_content"/>
-
     </androidx.cardview.widget.CardView>
 
 </ScrollView>
