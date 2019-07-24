@@ -31,6 +31,7 @@ public class ResultsActivity extends AppCompatActivity {
 
     private void setUpToolbar() {
         Toolbar toolbar = findViewById (R.id.toolbar);
+        setSupportActionBar(toolbar);
 
     }
     @Override

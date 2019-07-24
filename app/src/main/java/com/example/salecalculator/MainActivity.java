@@ -38,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
         original = findViewById(id.et_original);
         disc = findViewById(id.et_discount);
 
+        setupFAB();
+
+    }
+
+    private void setupFAB() {
         FloatingActionButton fab = findViewById(id.fab);
 
 
@@ -57,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
 
@@ -118,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     public void showAbout(MenuItem item) {
 
         Utils.showInfoDialog(this, "About Menu", "Created by Dina Leah Garber, Chana Lavian," +
-                "Laya KleinKaufman C 2019-Proffessor Abromson's class Summer 2019!");
+                "Laya KleinKaufman C 2019-Professor Abramson's class Summer 2019!");
 
     }
 }
