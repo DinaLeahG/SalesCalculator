@@ -5,23 +5,20 @@ import android.content.DialogInterface;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
 
 public class Utils {
-    public final static int sREQUEST_CODE_SETTINGS = 100, sREQUEST_CODE_LOCATION_PERMISSION = 100;
+    // AlertDialog
+    // -----------
 
-    // background
-    // ----------
-
-    public static void showHideBackground (boolean usePicBackground, ImageView background)
-    {
-        int visibilityMode = usePicBackground ? View.VISIBLE : View.INVISIBLE;
-
-        // Set the ImageView's visibility to be show or hidden as per the user preference
-        assert background != null;
-        background.setVisibility (visibilityMode);
-    }
-    //Dialog Box to Show about us.
+    /**
+     * Shows an Android (nicer) equivalent to JOptionPane
+     *
+     * @param strTitle Title of the Dialog box
+     * @param strMsg   Message (body) of the Dialog box
+     */
     private static void showAlertDialog (Context context, String strTitle, String strMsg,
                                          DialogInterface.OnClickListener okListener,
                                          DialogInterface.OnClickListener cancelListener)
@@ -42,6 +39,57 @@ public class Utils {
 
         // Create and Show the Dialog
         alertDialogBuilder.show ();
+    }
 
+    @NonNull
+    private static AlertDialog.Builder getDialogBasicsADB (Context context, String strTitle,
+                                                           String strMsg)
+    {
+        // Create the AlertDialog.Builder object
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder (context);
 
+        // Use the AlertDialog's Builder Class methods to set the title, icon, message, et al.
+        // These could all be chained as one long statement, if desired
+        alertDialogBuilder.setTitle (strTitle);
+        alertDialogBuilder.setMessage (strMsg);
+        alertDialogBuilder.setIcon (ContextCompat.getDrawable (context, R.mipmap.ic_launcher));
+        alertDialogBuilder.setCancelable (true);
+        return alertDialogBuilder;
+    }
+
+    @SuppressWarnings ("WeakerAccess") @NonNull
+    public static DialogInterface.OnClickListener getNewEmptyOnClickListener ()
+    {
+        return new DialogInterface.OnClickListener ()
+        {
+            @Override public void onClick (DialogInterface dialog, int which)
+            {
+
+            }
+        };
+    }
+
+    public static void showInfoDialog (Context context, int titleID, int msgID)
+    {
+        showInfoDialog (context, context.getString (titleID), context.getString (msgID));
+    }
+
+    @SuppressWarnings ("WeakerAccess")
+    public static void showInfoDialog (Context context, String strTitle, String strMsg)
+    {
+        showAlertDialog (context, strTitle, strMsg);
+    }
+
+    @SuppressWarnings ("WeakerAccess")
+    public static void showOkCancelDialog (Context context, String strTitle, String strMsg,
+                                           DialogInterface.OnClickListener okListener,
+                                           DialogInterface.OnClickListener cancelListener)
+    {
+        showAlertDialog (context, strTitle, strMsg, okListener, cancelListener);
+    }
+
+    private static void showAlertDialog (Context context, String strTitle, String strMsg)
+    {
+        showAlertDialog (context, strTitle, strMsg, null, null);
+    }
 }
