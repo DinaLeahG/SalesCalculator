@@ -4,4 +4,5 @@
     <string name="clear_field">Clear Field</string>
     <string name="reset_all">Reset All</string>
     <string name="banner_message">Please input the values</string>
+    <string name="about">About</string>
 </resources>

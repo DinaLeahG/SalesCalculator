@@ -4,15 +4,9 @@
     tools:context="com.mintedtech.tip_calculator.com.mintedtech.activities.ResultsActivity"
     >
     <item
-        android:id="@+id/menu_settings"
-        android:icon="@drawable/ic_settings_white"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="ifRoom" />
-    <item
         android:id="@+id/menu_about"
         android:icon="@drawable/ic_info_outline_white"
-        android:title="About"
-        app:showAsAction="ifRoom"
+        android:title="@string/about"
+        app:showAsAction="always"
         android:onClick="showAbout"/>
 </menu>
