@@ -3,44 +3,44 @@
 <TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:showIn="@layout/content_results">
 
     <TableRow
         android:gravity="center">
-        <TextView
-            android:text="Original Amount: "
-            />
-        <TextView
-            android:id="@+id/et_original"/>
-    </TableRow>
 
-    <TableRow
-        android:gravity="center">
-    <TextView
-        android:text="Percent Discount: "/>
-         <TextView
-        android:id="@+id/et_discount"/>
-    </TableRow>
-
-    <TableRow
-        android:gravity="center">
         <TextView
-            android:text="You Saved: "/>
-        <TextView
+            android:id="@+id/tv_orig"
+            style="@style/text_size"
             />
     </TableRow>
 
     <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center">
 
         <TextView
-            android:text="Total: "/>
+            android:id="@+id/percent"
+            style="@style/text_size" />
+    </TableRow>
+
+    <TableRow
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tv_saved"
+            style="@style/text_size"
+            />
+    </TableRow>
+
+    <TableRow
+        android:gravity="center">
 
         <TextView
-            />
+           android:id="@+id/tv_total"
+            style="@style/text_size"/>
     </TableRow>
 </TableLayout>

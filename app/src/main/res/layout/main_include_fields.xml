@@ -19,12 +19,13 @@
                 android:text="$"
                 android:layout_width="wrap_content"/>
             <EditText
+                android:id="@+id/et_original"
                 android:inputType="numberDecimal"
                 android:ems="5"
                 android:hint="100.00"
                 android:importantForAutofill="no"
                 tools:targetApi="o"
-                android:id="@+id/et_original"
+
                 />
             <TextView
                 android:text=" "/>
@@ -36,12 +37,13 @@
             <TextView
                 android:text=" "/>
             <EditText
+                android:id="@+id/et_discount"
                 android:inputType="numberDecimal"
                 android:ems="5"
                 android:hint="20.00"
                 android:importantForAutofill="no"
                 tools:targetApi="o"
-                android:id="@+id/et_discount"
+
                 />
             <TextView
                 android:text="%"/>

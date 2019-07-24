@@ -51,6 +51,9 @@
         <item name="cardUseCompatPadding">false</item>
     </style>
 
+    <style name="text_size">
+        <item name="android:textSize">16sp</item>
+    </style>
 
 
 </resources>

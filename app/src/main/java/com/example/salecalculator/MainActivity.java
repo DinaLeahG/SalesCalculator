@@ -3,12 +3,16 @@ package com.example.salecalculator;
 import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+
+import java.util.Locale;
 
 import static com.example.salecalculator.R.*;
 import static com.example.salecalculator.R.id.et_original;
@@ -16,6 +20,11 @@ import static com.example.salecalculator.R.id.et_original;
 public class MainActivity extends AppCompatActivity {
 
         private View mSBcontainer;
+        private Snackbar mSnackBar;
+
+        private EditText original;
+        private EditText disc;
+        private double mOriginalPrice, mPercentDiscount, mSaved, mTotal;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -23,15 +32,19 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(layout.activity_main);
                 Toolbar toolbar = findViewById(id.toolbar);
                 setSupportActionBar(toolbar);
+               original = findViewById(id.et_original);
+              disc = findViewById(id.et_discount);
 
                 FloatingActionButton fab = findViewById(id.fab);
+
+
                 fab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                                double mOriginalPrice= getOriginalPrice();
-                                double mPercentDiscount=getPercentDiscount();
-                                double mSaved=calculateSaved(mOriginalPrice,mPercentDiscount);
-                                double mTotal=calculateTotal(mOriginalPrice, mSaved);
+                                mOriginalPrice=getOriginalPrice();
+                                mPercentDiscount=getPercentDiscount();
+                                mSaved=calculateSaved(mOriginalPrice,mPercentDiscount);
+                                mTotal=calculateTotal(mOriginalPrice, mSaved);
 
                                 Intent intent = new Intent(getApplicationContext(),ResultsActivity.class);
                                 intent.putExtra("ORIGINAL_PRICE",mOriginalPrice);
@@ -41,10 +54,13 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
                         }
                 });
+
         }
 
+
         private double getOriginalPrice() {
-                double mOriginalPrice=Double.parseDouble(String.valueOf(findViewById(id.et_original)));;
+
+                double mOriginalPrice=Double.parseDouble(original.getText().toString());
                 if (mOriginalPrice<0)
                 {
                         Snackbar.make(mSBcontainer,"The original price must be greater than zero",Snackbar.LENGTH_LONG).show();
@@ -55,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         private double getPercentDiscount()
         {
-                double mPercentDiscount=Double.parseDouble(String.valueOf(findViewById(id.et_discount)));;
+                double mPercentDiscount=Double.parseDouble(disc.getText().toString());
                 if (mPercentDiscount<0)
                 {
                         Snackbar.make(mSBcontainer,"The percent discount must be greater than 0%",Snackbar.LENGTH_LONG).show();
@@ -75,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         private double calculateSaved(double mOriginalPrice, double mPercentDiscount) {
-                double mSaved= (100-mPercentDiscount)*mOriginalPrice;
+                double mSaved=(mPercentDiscount/100)*mOriginalPrice;
+
                 return mSaved;
         }
 
@@ -101,4 +118,8 @@ public class MainActivity extends AppCompatActivity {
 
                 return super.onOptionsItemSelected(item);
         }
+
+
+
+
 }
